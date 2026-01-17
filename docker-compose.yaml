@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mlperf-benchmark:
+    build:
+      context: .
+      dockerfile: Containerfile
+    image: mlperf-benchmark:latest
+    container_name: mlperf-gpu-benchmark
+    
+    # Podman GPU access using CDI
+    devices:
+      - nvidia.com/gpu=all
+    
+    # Security options for SELinux
+    security_opt:
+      - label=disable
+    
+    # Volume mounts with SELinux labels
+    volumes:
+      - ./results:/workspace/results:Z
+      - ./config.yaml:/workspace/config.yaml:ro,Z
+    
+    # Environment variables
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    
+    # Keep container running
+    restart: unless-stopped

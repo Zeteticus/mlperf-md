@@ -1,0 +1,29 @@
+# Results directory
+results/
+*.json
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Container
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,25 @@
+# MLPerf Benchmark Configuration
+
+# Duration in hours (default: 4)
+duration_hours: 4
+
+# MLPerf scenarios to test
+# Options: SingleStream, Offline, Server, MultiStream
+scenarios:
+  - SingleStream
+  - Offline
+
+# Maximum iterations (benchmark will stop after this many iterations OR duration_hours, whichever comes first)
+iterations: 10
+
+# GPU settings
+gpu_device: 0  # CUDA device ID
+
+# Models to benchmark
+models:
+  - resnet50
+  - bert
+
+# Logging
+log_level: INFO
+save_intermediate_results: true
