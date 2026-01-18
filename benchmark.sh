@@ -75,6 +75,7 @@ run_benchmark() {
         --name mlperf-gpu-benchmark \
         --device nvidia.com/gpu=all \
         --security-opt=label=disable \
+	--replace \
         -v "$SCRIPT_DIR/results:/workspace/results:Z" \
         -v "$SCRIPT_DIR/config.yaml:/workspace/config.yaml:ro,Z" \
         -v "$SCRIPT_DIR/run_benchmark.py:/workspace/run_benchmark.py:ro,Z" \

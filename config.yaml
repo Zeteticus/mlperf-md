@@ -1,7 +1,7 @@
 # MLPerf Benchmark Configuration
 
 # Duration in hours (default: 4)
-duration_hours: 4
+duration_hours: 8
 
 # MLPerf scenarios to test
 # Options: SingleStream, Offline, Server, MultiStream
